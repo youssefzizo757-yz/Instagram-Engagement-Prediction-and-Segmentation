@@ -39,14 +39,12 @@ Pipeline:
 ```text
 ├── app.py
 ├── instagram_engagement_model.ipynb
+├── model_artifacts.joblib
+├── train_model.py
+├── style.css
+├── config.toml
 ├── requirements.txt
-├── assets/
-│   ├── icon.svg
-│   └── style.css
-├── ml/
-│   ├── model_artifacts.joblib
-│   └── train_model.py
-└── data/
+└── .gitignore
     └── README.md
 ```
 
