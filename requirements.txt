@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+joblib
+holidays
+scikit-learn==1.9.1
+matplotlib
+seaborn
+scipy
+jupyter
