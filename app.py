@@ -9,12 +9,10 @@ from datetime import date, time, datetime
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 st.set_page_config(page_title="Instagram Engagement Predictor",
-                   page_icon=os.path.join(BASE_DIR, "assets", "icon.svg"), layout="centered")
-
+                   page_icon="📈", layout="centered")
 
 def inject_css():
-    with open(os.path.join(BASE_DIR, "assets", "style.css"), "r", encoding="utf-8") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    with open(os.path.join(BASE_DIR, "style.css"), "r", encoding="utf-8") as f:
 
 
 inject_css()
@@ -23,7 +21,7 @@ inject_css()
 @st.cache_resource
 def load_artifacts():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    return joblib.load(os.path.join(base_dir, "ml", "model_artifacts.joblib"))
+        return joblib.load(os.path.join(base_dir, "model_artifacts.joblib"))
 
 artifacts = load_artifacts()
 scaler = artifacts["scaler"]
