@@ -13,6 +13,7 @@ st.set_page_config(page_title="Instagram Engagement Predictor",
 
 def inject_css():
     with open(os.path.join(BASE_DIR, "style.css"), "r", encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
 inject_css()
@@ -21,8 +22,8 @@ inject_css()
 @st.cache_resource
 def load_artifacts():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-        return joblib.load(os.path.join(base_dir, "model_artifacts.joblib"))
-
+    return joblib.load(os.path.join(base_dir, "model_artifacts.joblib"))
+  
 artifacts = load_artifacts()
 scaler = artifacts["scaler"]
 kmeans = artifacts["kmeans"]
